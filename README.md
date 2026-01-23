@@ -1,5 +1,3 @@
-# SMARTBIOMED-SEGMENTACI-N-DE-V-AS-A-REAS-BASADA-EN-MACHINE-LEARNING
-
 # SMARTBIOMED: Segmentación de Vías Aéreas Basada en Machine Learning
 
 > **"No se trata de imitar al experto, sino de modelar la anatomía."**
