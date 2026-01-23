@@ -164,5 +164,15 @@ El flujo de trabajo se organiza en **11 notebooks Jupyter**, divididos en tres f
 
 ## 6. Anexos
 
-### Código fuente
-Todo el código está organizado en notebooks Jupyter bajo la estructura:
+
+### Dataset
+Los datos utilizados provienen del **ATM’22 Challenge**:  
+- [TrainBatch1](https://doi.org/10.5281/zenodo.6370401)  
+- [TrainBatch2](https://doi.org/10.5281/zenodo.6370402)
+
+### Requisitos
+```txt
+monai==1.3.0
+torch==2.1.0+cu118
+SimpleITK==2.3.1
+scikit-image==0.22.0
