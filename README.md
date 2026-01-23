@@ -1,6 +1,6 @@
 # SMARTBIOMED-SEGMENTACI-N-DE-V-AS-A-REAS-BASADA-EN-MACHINE-LEARNING
 
-# 🫁 SMARTBIOMED: Segmentación de Vías Aéreas Basada en Machine Learning
+# SMARTBIOMED: Segmentación de Vías Aéreas Basada en Machine Learning
 
 > **"No se trata de imitar al experto, sino de modelar la anatomía."**
 
@@ -10,7 +10,7 @@ El enfoque combina técnicas clásicas de procesamiento de imágenes con un mode
 
 ---
 
-## 📋 Tabla de Contenidos
+## Tabla de Contenidos
 
 - [1. Problema y Solución Propuesta](#1-problema-y-solución-propuesta)
 - [2. Metodologías](#2-metodologías)
