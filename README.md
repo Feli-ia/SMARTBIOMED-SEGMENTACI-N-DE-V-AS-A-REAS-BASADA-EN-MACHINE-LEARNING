@@ -126,7 +126,7 @@ El flujo de trabajo se organiza en **11 notebooks Jupyter**, divididos en tres f
 
 ### 4.2 Validación cualitativa
 
-![Figura 6: Comparación visual](docs/fig6_comparison.png)
+![Figura 6: Comparación visual](docs/output.png)
 
 **Interpretación**:  
 - **(A) Gold Standard**: Arquitectura completa hasta G5.  
