@@ -11,7 +11,8 @@ El enfoque propuesto rompe con la dependencia del gold standard manual mediante 
 3. [Metodología General](#metodología-general)
 4. [Implementación Técnica](#implementación-técnica)
 5. [Resultados Principales](#resultados-principales)
-6. [Glosario Técnico](#glosario-técnico)
+6. [Dataset](#Dataset)
+7. [Glosario Técnico](#glosario-técnico)
 
 
 ## Motivación y Problema Central
