@@ -229,28 +229,28 @@ En conjunto, los resultados demuestran que un método clásico bien diseñado pu
 ### Dataset
 Los datos utilizados provienen del ATM’22 Challenge:
 
-TrainBatch1: https://doi.org/10.5281/zenodo.6370401
-TrainBatch2: https://doi.org/10.5281/zenodo.6370402
+- TrainBatch1: https://doi.org/10.5281/zenodo.6370401
+- TrainBatch2: https://doi.org/10.5281/zenodo.6370402
 Nota: El repositorio asume que los datos están organizados en el directorio 
 
 
 ### Glosario Técnico
-BFS (Búsqueda en Amplitud): Algoritmo de recorrido de grafos utilizado para propagar la segmentación desde la tráquea (G0) hacia las ramas periféricas, garantizando una exploración jerárquica y conectada del árbol bronquial.
+- BFS (Búsqueda en Amplitud): Algoritmo de recorrido de grafos utilizado para propagar la segmentación desde la tráquea (G0) hacia las ramas periféricas, garantizando una exploración jerárquica y conectada del árbol bronquial.
 
-Dice (Coeficiente de Sørensen-Dice): Métrica de similitud que cuantifica la superposición espacial entre dos máscaras binarias. Se define como DSC = 2|X ∩ Y| / (|X| + |Y|), donde X es la segmentación automática e Y el gold standard manual. Es insensible a errores topológicos como la fragmentación o la poda de ramas distales.
+- Dice (Coeficiente de Sørensen-Dice): Métrica de similitud que cuantifica la superposición espacial entre dos máscaras binarias. Se define como DSC = 2|X ∩ Y| / (|X| + |Y|), donde X es la segmentación automática e Y el gold standard manual. Es insensible a errores topológicos como la fragmentación o la poda de ramas distales.
+- 
+- Filtración (Leakage): Error en la segmentación automática en el que el algoritmo confunde parénquima pulmonar o vasos sanguíneos con vías aéreas, rompiendo la integridad topológica del árbol bronquial. Es especialmente prevalente en casos con enfisema panlobulillar, donde las cavidades de aire inducen falsos positivos.
 
-Filtración (Leakage): Error en la segmentación automática en el que el algoritmo confunde parénquima pulmonar o vasos sanguíneos con vías aéreas, rompiendo la integridad topológica del árbol bronquial. Es especialmente prevalente en casos con enfisema panlobulillar, donde las cavidades de aire inducen falsos positivos.
+- HU (Unidades Hounsfield): Escala cuantitativa de densidades radiológicas en tomografía computarizada. El aire puro equivale a –1024 HU, el agua a 0 HU y el hueso cortical a +1000 HU o más. Los valores intermedios reflejan tejidos blandos, grasa y estructuras vasculares.
 
-HU (Unidades Hounsfield): Escala cuantitativa de densidades radiológicas en tomografía computarizada. El aire puro equivale a –1024 HU, el agua a 0 HU y el hueso cortical a +1000 HU o más. Los valores intermedios reflejan tejidos blandos, grasa y estructuras vasculares.
+- Padding: Operación de relleno de los bordes de un volumen con un valor constante (–1024 HU, aire) para ajustar sus dimensiones a múltiplos de 32. Esta práctica garantiza que las operaciones morfológicas y el algoritmo BFS se realicen en un entorno espacial completo, evitando sesgos en los límites del volumen.
 
-Padding: Operación de relleno de los bordes de un volumen con un valor constante (–1024 HU, aire) para ajustar sus dimensiones a múltiplos de 32. Esta práctica garantiza que las operaciones morfológicas y el algoritmo BFS se realicen en un entorno espacial completo, evitando sesgos en los límites del volumen.
+- ROI (Región de Interés): Subvolumen tridimensional que contiene únicamente tejido pulmonar, excluyendo mediastino, corazón y otras estructuras no relevantes para la segmentación de vías aéreas. Su correcta delimitación es fundamental para evitar filtración y mejorar la robustez del pipeline.
 
-ROI (Región de Interés): Subvolumen tridimensional que contiene únicamente tejido pulmonar, excluyendo mediastino, corazón y otras estructuras no relevantes para la segmentación de vías aéreas. Su correcta delimitación es fundamental para evitar filtración y mejorar la robustez del pipeline.
+- Swin UNETR: Arquitectura de segmentación 3D basada en transformers, que combina la capacidad de modelado global de los Swin Transformers con la eficiencia jerárquica de los codificadores-decodificadores tipo U-Net. Es especialmente adecuada para capturar estructuras ramificadas y multiscale, como el árbol bronquial.
 
-Swin UNETR: Arquitectura de segmentación 3D basada en transformers, que combina la capacidad de modelado global de los Swin Transformers con la eficiencia jerárquica de los codificadores-decodificadores tipo U-Net. Es especialmente adecuada para capturar estructuras ramificadas y multiscale, como el árbol bronquial.
+- TAC (Total Airway Count): Biomarcador estructural definido como el número total de segmentos bronquiales identificables en una TC de tórax, obtenido mediante esqueletización 3D y conteo de ramas conectadas. Refleja la integridad global del árbol bronquial y ha sido validado como predictor de progresión de EPOC.
 
-TAC (Total Airway Count): Biomarcador estructural definido como el número total de segmentos bronquiales identificables en una TC de tórax, obtenido mediante esqueletización 3D y conteo de ramas conectadas. Refleja la integridad global del árbol bronquial y ha sido validado como predictor de progresión de EPOC.
+- TACg (TAC por generación): Distribución del Total Airway Count por generación bronquial, donde G0 corresponde a la tráquea. El TACg peak indica la generación con mayor número de ramas terminales y sirve como indicador de la profundidad anatómica alcanzada por el método.
 
-TACg (TAC por generación): Distribución del Total Airway Count por generación bronquial, donde G0 corresponde a la tráquea. El TACg peak indica la generación con mayor número de ramas terminales y sirve como indicador de la profundidad anatómica alcanzada por el método.
-
-TC (Tomografía Computarizada): Técnica de imagen médica que utiliza rayos X y procesamiento computacional para generar cortes transversales del cuerpo con alta resolución espacial. En este trabajo, se utilizaron volúmenes con resolución isotrópica promedio de ≈0.5–0.7 mm.
+- TC (Tomografía Computarizada): Técnica de imagen médica que utiliza rayos X y procesamiento computacional para generar cortes transversales del cuerpo con alta resolución espacial. En este trabajo, se utilizaron volúmenes con resolución isotrópica promedio de ≈0.5–0.7 mm.
