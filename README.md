@@ -12,9 +12,6 @@ El enfoque propuesto rompe con la dependencia del gold standard manual mediante 
 4. [Implementación Técnica](#implementación-técnica)
 5. [Resultados Principales](#resultados-principales)
 6. [Requisitos y Reproducibilidad](#requisitos-y-reproducibilidad)
-7. [Estructura del Repositorio](#estructura-del-repositorio)
-8. [Glosario Técnico](#glosario-técnico)
-9. [Citas y Reconocimientos](#citas-y-reconocimientos)
 
 ## Motivación y Problema Central
 
